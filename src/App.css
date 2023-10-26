@@ -132,3 +132,7 @@ body {
 .currentMoveText{
   font-size: medium;
 }
+
+.winSlot{
+  color: greenyellow;
+}

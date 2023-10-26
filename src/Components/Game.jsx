@@ -9,6 +9,7 @@ export default function Game() {
   const xIsNext = currentMove % 2 === 0;
 
   function handlePlay(nextSquares) {
+    
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
@@ -21,7 +22,7 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      if(move == currentMove){
+      if(move === currentMove){
         return (
           <li key={move}>
              <span className="currentMoveText">You are at move {move}</span>

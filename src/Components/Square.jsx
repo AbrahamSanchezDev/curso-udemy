@@ -1,6 +1,6 @@
-export function Square({ value , onSquareClick }) {
+export function Square({ value , onSquareClick,winSlot }) {
   return (
-    <button className="square" onClick={onSquareClick}>
+    <button className={winSlot ? "square winSlot" : "square"} onClick={onSquareClick}>
       {value}
     </button>
   );
