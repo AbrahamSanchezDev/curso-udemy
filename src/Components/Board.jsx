@@ -20,7 +20,7 @@ export function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = "Winner: " + winner;
+    status = "Winner: " +  (xIsNext ? "O" : "X");
   } else if(!squares.includes(null)){
     status = "DRAW!"
   } else {
@@ -31,7 +31,7 @@ export function Board({ xIsNext, squares, onPlay }) {
   
   const slots = () => {
     const grid = [];
-    const curWin = calculateWinner(squares);
+    const curWin = winner;
     console.log(curWin)
     for (let i = 0; i < size; i++) {
       const xGrid = [];
