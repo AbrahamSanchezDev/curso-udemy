@@ -127,6 +127,8 @@ body {
 
 .game-info {
   margin-left: 20px;
+  height: 250px;
+  overflow: auto
 }
 
 .currentMoveText{
