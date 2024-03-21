@@ -27,7 +27,7 @@ export default function TextStrokeAnimation({text}) {
           <text className='text' x="20" y="75">{theText()}</text>
         </svg>
       </main>
-      <button className='reset' onClick={handleClick}>Reset the Animation</button>
+      <button className='reset' onClick={()=>{handleClick();}}>Reset the Animation</button>
     </>
   )
 }
