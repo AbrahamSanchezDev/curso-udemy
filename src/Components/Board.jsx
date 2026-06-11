@@ -32,7 +32,6 @@ export function Board({ xIsNext, squares, onPlay }) {
   const slots = () => {
     const grid = [];
     const curWin = winner;
-    console.log(curWin)
     for (let i = 0; i < size; i++) {
       const xGrid = [];
       for (let x = 0; x < size; x++) {
