@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/curso-udemy/static/css/main.6290bb21.css",
-    "main.js": "/curso-udemy/static/js/main.0c0d62bd.js",
+    "main.js": "/curso-udemy/static/js/main.32d9ee90.js",
     "static/js/787.827e239d.chunk.js": "/curso-udemy/static/js/787.827e239d.chunk.js",
     "index.html": "/curso-udemy/index.html",
     "main.6290bb21.css.map": "/curso-udemy/static/css/main.6290bb21.css.map",
-    "main.0c0d62bd.js.map": "/curso-udemy/static/js/main.0c0d62bd.js.map",
+    "main.32d9ee90.js.map": "/curso-udemy/static/js/main.32d9ee90.js.map",
     "787.827e239d.chunk.js.map": "/curso-udemy/static/js/787.827e239d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6290bb21.css",
-    "static/js/main.0c0d62bd.js"
+    "static/js/main.32d9ee90.js"
   ]
 }
