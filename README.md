@@ -1,70 +1,177 @@
-# Getting Started with Create React App
+# 🎮 Tic-Tac-Toe Game with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Interactive Tic-Tac-Toe game built with React featuring move history and time travel functionality.**
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Project Summary
 
-### `npm start`
+This learning project demonstrates core React concepts including component composition, state management with hooks, and unidirectional data flow. Built as part of a Udemy course (curso-udemy), the game provides hands-on experience with interactive UI components, game logic implementation, and advanced state handling techniques.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Key Learning Objective**: Master React fundamentals through building a fully functional game with complex state management and event handling.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🎯 Project Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a classic Tic-Tac-Toe game where two players alternate turns on a 3×3 grid. The application highlights winning combinations with visual indicators and allows players to navigate through move history, effectively implementing a "time travel" feature to review or restart from previous game states.
 
-### `npm run build`
+**User Experience**: 
+- Click any square to mark it with X or O
+- Winner is automatically detected and highlighted
+- View complete move history in the left sidebar
+- Jump to any previous move to continue play
+- Draw detection when all squares are filled
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ✨ Key Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ✅ **Interactive Game Board** – Click to place X or O marks
+- ✅ **Winner Detection** – Automatic detection with visual highlighting of winning combination
+- ✅ **Move History** – Complete log of all moves made during gameplay
+- ✅ **Time Travel** – Jump to any previous move and continue playing from that state
+- ✅ **Draw Detection** – Recognizes when the board is full with no winner
+- ✅ **Current Move Indicator** – Shows which move is currently active
+- ✅ **Responsive UI** – CSS-styled components for clear visual hierarchy
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 👁️ Preview
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Tic-Tac-Toe Game Preview](Preview_1.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Demo URL**: To deploy and view this project, see "Build & Run Locally" section below.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📁 Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+src/
+├── Components/
+│   ├── Board.jsx              # Main game board logic and rendering
+│   ├── Square.jsx             # Individual square component
+│   ├── Game.jsx               # Game state and move history manager
+│   ├── calculateWinner.jsx    # Winner detection utility
+│   ├── FirstComponent.jsx     # Learning component
+│   └── TextStrokeAnimation.jsx# Animated text header
+├── App.jsx                    # Root application component
+├── App.css                    # Application styling
+├── proxy.js                   # Express proxy server
+└── proxyDB.js                 # Proxy database configuration
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Key Systems**:
+- **Game State Manager** (`Game.jsx`) – Manages move history and current board state using React hooks
+- **Board Logic** (`Board.jsx`) – Handles click events, win/draw detection, and board rendering
+- **Utility Functions** (`calculateWinner.jsx`) – Pure functions for deterministic win condition checking
+- **UI Components** (`Square.jsx`, animations) – Presentational components for rendering
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🏗️ Architecture Highlights
 
-### Analyzing the Bundle Size
+**Component Composition Pattern**: The Game component serves as the container managing all state, with Board and Square as presentational children. Data flows downward through props; events flow upward through callbacks.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Immutable State Updates**: Move history is maintained using immutable patterns (`array.slice()`, spread operator) to enable reliable time travel without side effects.
 
-### Making a Progressive Web App
+**Pure Functions**: The `calculateWinner` function is deterministic and pure, receiving squares array and returning winning line indices or null.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Event-Driven Interaction**: User clicks trigger event handlers that update state, which re-renders components efficiently through React's reconciliation algorithm.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🛠️ Technology Stack
 
-### Deployment
+- **React 18** – Modern component library with hooks for functional components and state management
+- **React Hooks (useState)** – Manage game state, move history, and current move index
+- **JavaScript ES6** – Arrow functions, destructuring, const/let for clean, modern syntax
+- **Express** – Backend proxy server for development and API routing
+- **Axios** – HTTP client for async requests (configured in proxy)
+- **React Scripts (Create React App)** – Build tooling, hot reloading, and webpack configuration
+- **CSS3** – Styling for grid layout, animations, and visual feedback
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 💻 Code Quality & Engineering Practices
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Architecture**: Follows React best practices with proper component hierarchy, single responsibility principle (each component has one job), and separation of concerns. Game state is centralized in the Game component, with Board handling logic and Square handling UI.
+
+**Maintainability**: Pure utility functions (`calculateWinner`) are decoupled from components, making them testable and reusable. Component props clearly define interfaces; CSS classes are semantic and organized.
+
+**Professional Standards**: Uses functional components with hooks (modern React), follows naming conventions (PascalCase for components, camelCase for functions), and implements proper key attributes in lists for rendering efficiency.
+
+---
+
+## 🚀 How to Build & Run Locally
+
+### Prerequisites
+- Node.js (v14+)
+- npm or yarn
+
+### Setup and Run
+
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+The application will open at `http://localhost:3000` in your browser. Hot reloading is enabled—changes to source files will automatically refresh the page.
+
+### Build for Production
+
+```bash
+# Create optimized production build
+npm run build
+```
+
+The build output will be in the `build/` folder, ready for deployment to any static hosting service (Netlify, Vercel, GitHub Pages, etc.).
+
+### Run Tests
+
+```bash
+# Launch test runner in watch mode
+npm test
+```
+
+---
+
+## 📚 Development Insights
+
+This project is part of a Udemy course curriculum, serving as hands-on practice for React fundamentals. The implementation progresses through:
+
+1. **Component Basics** – Building Square and Board as reusable UI components
+2. **State Management** – Introducing useState and prop drilling for multi-level state
+3. **Game Logic** – Implementing win conditions, draw detection, move validation
+4. **Advanced Features** – Implementing move history navigation and time travel with immutable updates
+
+The proxy server setup (`proxy.js`, `proxyDB.js`) demonstrates backend integration patterns commonly used in full-stack React applications.
+
+---
+
+## 🎓 Learning Outcomes
+
+- ✅ Mastered React functional components and hooks-based state management
+- ✅ Implemented complex game logic with efficient state transitions
+- ✅ Practiced immutable state updates for reliable time travel features
+- ✅ Built responsive, interactive UIs with event handling and conditional rendering
+- ✅ Understood component composition and prop-driven architectures
+- ✅ Learned CSS Grid and Flexbox for game board layout
+- ✅ Configured and used Create React App tooling and development workflow
+
+---
+
+## 👨‍💻 Author & Contact
+
+**Learning Project** – Udemy Course Practice Repository
+
+---
+
+**Note on Demo URL**: To generate a public demo URL, deploy the built application to a hosting service:
+- **Vercel**: `npm install -g vercel && vercel` (requires Vercel account)
+- **Netlify**: Drag-and-drop the `build/` folder to Netlify, or connect GitHub repo
+- **GitHub Pages**: Configure in `package.json` with `"homepage"` field and run `npm run build && npm run deploy`

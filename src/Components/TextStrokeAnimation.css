@@ -19,21 +19,34 @@
 .text-container {
   display: flex;
   justify-content: center;
-  block-size: min(10rem, 23vw);
-  min-inline-size: 22.5rem;
+  align-items: center; /* Centers the SVG vertically */
+  width: 100%;
+  max-width: 1200px; /* Limits ultra-wide stretching on giant screens */
+  margin: 0 auto; /* Centers the entire container container on the screen */
+  height: auto;
+  min-height: 12rem; /* Ensures it retains its commanding height */
 }
 
 .text-stroke {
-  /* font-size: 92px; */
-  font-size: 10vh;
-  letter-spacing: 4px;
-  fill: none;
+  width: 100%;
+  height: 100%;
+  overflow: visible; /* Prevents letters or drop-shadows from getting clipped */
+
+  /* Animation properties */
   stroke: #000;
   stroke-width: 2;
   stroke-dasharray: 100%;
   stroke-dashoffset: 100%;
   animation: textStrokeAnim 4000ms linear both;
   animation-iteration-count: 1;
+  font-size: clamp(1rem, 8vw, 8.5rem);
+}
+
+.animation-text {
+  /* SVG elements use 'fill', not 'background-clip' or 'color' */
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  height: 100%;
 }
 
 .reset {
@@ -46,6 +59,7 @@
   position: relative;
   background-color: hsl(149, 96%, 45%);
   color: #555;
+  margin-bottom: 2rem;
 }
 
 .reset::after,
@@ -58,13 +72,18 @@
 }
 
 .reset::after {
-  box-shadow: 0 0.25rem 0.5rem #0003, -0.124rem 0.5rem 0.45rem #0002;
+  box-shadow:
+    0 0.25rem 0.5rem #0003,
+    -0.124rem 0.5rem 0.45rem #0002;
   opacity: 1;
 }
 
 .reset::before {
-  box-shadow: inset 0 1px 0.5px 0px #777, inset 0 -2px 0.5px 0px #fff9,
-    inset 0 4px 10px 0px #0007, inset 0 -4px 16px 0px #fff7;
+  box-shadow:
+    inset 0 1px 0.5px 0px #777,
+    inset 0 -2px 0.5px 0px #fff9,
+    inset 0 4px 10px 0px #0007,
+    inset 0 -4px 16px 0px #fff7;
   opacity: 0;
 }
 

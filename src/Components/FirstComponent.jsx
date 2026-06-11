@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 
 export default function FirstComponent() {
   return (
-    <>   
-    <div>HELLO WORLD! </div>
-    <br />
+    <>
+      <div>HELLO THERE! </div>
+      <br />
     </>
-  )
+  );
 }

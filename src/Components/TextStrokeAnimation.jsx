@@ -1,33 +1,39 @@
-import React from 'react'
+import React, { useRef } from 'react';
 
+export default function TextStrokeAnimation({ text }) {
+  const svgRef = useRef(null);
 
-export default function TextStrokeAnimation({text}) {
-
-  const setAnimationName = (element, animationName) =>{
-    if(element){
+  const setAnimationName = (element, animationName) => {
+    if (element) {
       element.style.animationName = animationName;
     }
-  }
+  };
 
-  const handleClick = () =>{
-     const textAnimation = document.querySelector(".text-stroke");
-     setAnimationName(textAnimation,"none");
-     requestAnimationFrame(() =>{
-      setTimeout(()=> setAnimationName(textAnimation,""),0);
-     });
-  }
+  const handleClick = () => {
+    const textAnimation = svgRef.current;
+    setAnimationName(textAnimation, "none");
+    requestAnimationFrame(() => {
+      setTimeout(() => setAnimationName(textAnimation, ""), 0);
+    });
+  };
 
-  const theText = ()=>{
-     return  text ? text:"Worlds Dev!";
-  }
+  const theText = () => {
+    return text ? text : "Worlds Dev!";
+  };
+
   return (
     <>
       <main className='text-container'>
-        <svg className='text-stroke' viewBox='0 0 500 100' width="80%" height="100%">
-          <text className='text' x="20" y="75">{theText()}</text>
+        <svg ref={svgRef} className='text-stroke' width="100%" height="100%">
+          {/* Changed x="50%" and textAnchor="middle" to dynamically center the text 
+            regardless of what screen size or word length is passed in.
+          */}
+          <text className='animation-text' x="50%" y="70%" textAnchor="middle">
+            {theText()}
+          </text>
         </svg>
       </main>
-      <button className='reset' onClick={()=>{handleClick();}}>Reset the Animation</button>
+      <button className='reset' onClick={handleClick}>Reset the Animation</button>
     </>
-  )
+  );
 }
