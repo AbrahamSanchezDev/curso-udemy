@@ -41,7 +41,7 @@ This is a classic Tic-Tac-Toe game where two players alternate turns on a 3×3 g
 
 ![Tic-Tac-Toe Game Preview](Preview_1.png)
 
-**Demo URL**: To deploy and view this project, see "Build & Run Locally" section below.
+**Demo URL**: [Github Pages URL](https://abrahamsanchezdev.github.io/curso-udemy/), or see "Build & Run Locally" section below.
 
 ---
 
